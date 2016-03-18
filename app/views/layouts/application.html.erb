@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bulbz1</title>
+
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        BULBZ
+                    </a>
+                </li>
+                <li style="margin-top: 0px;">
+                    <a href="#">All blbz</a>
+                </li>
+                                <li>
+                    <a href="#">Your public blbz</a>
+                </li>
+                                <li>
+                    <a href="#">Your private blbz</a>
+                </li>
+
+                <li>
+                  <%= link_to 'New Bulb', new_bulb_path %>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12" style="padding: 0px 30px 80px 30px;">
+                        <%= yield %>
+<!--                         <a href="#menu-toggle" class="" id="menu-toggle">Toggle Menu</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+
+
+
+</body>
+</html>

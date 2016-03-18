@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bulb.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @bulb.title %>
+</p>
+
+<p>
+  <strong>What:</strong>
+  <%= @bulb.what %>
+</p>
+
+<p>
+  <strong>Forwhom:</strong>
+  <%= @bulb.forwhom %>
+</p>
+
+<p>
+  <strong>Why:</strong>
+  <%= @bulb.why %>
+</p>
+
+<p>
+  <strong>Need:</strong>
+  <%= @bulb.need %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @bulb.category %>
+</p>
+
+<p>
+  <strong>Private:</strong>
+  <%= @bulb.private %>
+</p>
+
+<%= link_to 'Edit', edit_bulb_path(@bulb) %> |
+<%= link_to 'Back', bulbs_path %>

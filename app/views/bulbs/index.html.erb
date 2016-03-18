@@ -1,0 +1,70 @@
+
+
+
+
+
+
+<% @bulbs.each do |bulb| %>
+    <div class="col-lg-4 bulb_card">
+      <div class="row bulb_hl">
+      <h4>A <span class="index_mega"><%= bulb.art %></span></h4>
+      <h4>for <span class="index_mega"> <%= bulb.target %></span></h4>
+      <h4>who <span class="index_mega"> <%= bulb.verb %></span></h4>
+      <h4><span class="index_mega2"> <%= bulb.need %></span></h4>
+      </div>
+    </div>
+<% end %>
+
+
+
+
+
+
+
+<div class="fut" style="display: none">
+
+<p id="notice"><%= notice %></p>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>What</th>
+      <th>Forwhom</th>
+      <th>Why</th>
+      <th>Need</th>
+      <th>Category</th>
+      <th>Private</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bulbs.each do |bulb| %>
+      <tr>
+        <td><%= bulb.user_id %></td>
+        <td><%= bulb.title %></td>
+        <td><%= bulb.what %></td>
+        <td><%= bulb.forwhom %></td>
+        <td><%= bulb.why %></td>
+        <td><%= bulb.need %></td>
+        <td><%= bulb.category %></td>
+        <td><%= bulb.private %></td>
+        <td><%= link_to 'Show', bulb %></td>
+        <td><%= link_to 'Edit', edit_bulb_path(bulb) %></td>
+        <td><%= link_to 'Destroy', bulb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>
+
+
+
+

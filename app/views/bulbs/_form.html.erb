@@ -1,0 +1,28 @@
+<%= form_for(@bulb) do |f| %>
+  <% if @bulb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bulb.errors.count, "error") %> prohibited this bulb from being saved:</h2>
+
+      <ul>
+      <% @bulb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<h3>My latest BULB is <span>a</span> <%= f.select(:art, options_for_select(["App", "Restaurant", "Platform", "Course", "Place", "Restaurant", "Store"])) %></h3>
+<h3>for <%= f.text_field :target %> who <%= f.select(:verb, options_for_select(["want", "need", "seek"])) %></h3>
+<h3> <%= f.text_area :need %></h3>
+
+<div class="additional_bulb_info">
+<h3>Details about your BULB (optional)</h3>
+<h5>How should it work? Who would you need to start working on it?</h5>
+<h3> <%= f.text_area(:description, :class => "text_area_small") %></h3>
+</div>
+
+<!-- <button type="submit" class="btn btn-success">CREATE BULB</button> -->
+    <%= f.submit(:class => "submit_button") %>
+
+<% end %>
