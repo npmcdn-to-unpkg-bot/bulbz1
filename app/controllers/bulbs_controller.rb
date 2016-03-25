@@ -25,10 +25,14 @@ class BulbsController < ApplicationController
   # POST /bulbs.json
   def create
     @bulb = Bulb.new(bulb_params)
+    search_results = Unsplash::Photo.search(@bulb.target)
+      if search_results.count != 0
+        @bulb.picture = search_results.sample.urls["small"]
+      end
 
     respond_to do |format|
       if @bulb.save
-        format.html { redirect_to @bulb, notice: 'Bulb was successfully created.' }
+        format.html { redirect_to bulbs_url }
         format.json { render :show, status: :created, location: @bulb }
       else
         format.html { render :new }

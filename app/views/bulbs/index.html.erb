@@ -2,14 +2,34 @@
 <div class="">
 
 <div class="grid">
-
-<% @bulbs.each do |bulb| %>
+<div class="grid-sizer"></div>
+<% @bulbs.reverse.each do |bulb| %>
     <div class="grid-item">
+
+      <% if bulb.picture != nil %>
       <div class="row bulb_hl">
-      <h4>A <span class="index_mega"><%= bulb.art %></span></h4>
-      <h4>for <span class="index_mega_color"> <%= bulb.target %></span></h4>
-      <h4>who <span class="index_mega"> <%= bulb.verb %></span></h4>
-      <h4><span class="index_mega2"> <%= bulb.need %></span></h4>
+        <img src="<%= bulb.picture %>" width="100%">
+      </div>
+      <% end %>
+
+      <div class="row bulb_hl">
+        <div class="col-xs-2">
+          <% if bulb.art == "App" %>
+          <h4 style="margin-bottom: 35px; padding-top: 15px;">An</h4>
+          <% else %>
+          <h4 style="margin-bottom: 35px; padding-top: 15px;">A</h4>
+          <% end %>
+          <h4 style="margin-bottom: 35px; padding-top: 15px;">for</h4>
+          <h4 style="margin-bottom: 35px; padding-top: 15px;">who</h4>
+        </div>
+        <div class="col-xs-10">
+          <h4 style="margin-bottom: 35px;"><span class="index_mega"><%= bulb.art %></span></h4>
+          <h4 style="margin-bottom: 35px;"><span class="index_mega_color"> <%= bulb.target %></span></h4>
+          <h4 style="margin-bottom: 35px;"><span class="index_mega"> <%= bulb.verb %></span></h4>
+        </div>
+      </div>
+      <div class="row bulb_hl" style="padding-top: 0px; margin-top: -20px;">
+        <h4><span class="index_mega2"> <%= bulb.need %></span></h4>
       </div>
     </div>
 <% end %>
