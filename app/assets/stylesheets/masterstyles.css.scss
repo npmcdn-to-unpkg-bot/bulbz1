@@ -148,6 +148,13 @@ select:focus, input:focus, textarea:focus {
 .grid-sizer,
 .grid-item {
   width: 33.333%;
+    @media screen and (max-width: 1300px) {
+        width: 50%;
+       }
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+       }
+
 }
 
 .grid-item {
@@ -178,6 +185,7 @@ select:focus, input:focus, textarea:focus {
 
 .sidebar-brand {
   font-family: $main_font2;
+
 }
 
 .bulb_input_big {
@@ -201,7 +209,8 @@ select:focus, input:focus, textarea:focus {
 .submit_button {
   width: 690px;
   margin-top: 20px;
-    background-color: pink;
+  background-color: #FB375D;
+  color: white;
 }
 
 .submit_button:hover {
