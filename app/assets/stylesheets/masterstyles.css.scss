@@ -106,6 +106,36 @@ select:focus, input:focus, textarea:focus {
 
 }
 
+.index_mega_color {
+  font-family: $main_font2;
+  font-weight: bolder;
+  border:none;
+  border-radius: 0;
+  font-size: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: #FB375D;
+  color: white;
+}
+
+.grid {
+
+}
+
+
+.grid-item {
+  width: 375px;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 0px;
+  float: left;
+  border: 20px solid #ECF0F1;
+}
+
+.grid-item:nth-child(n) {
+
+}
+
 .bulb_card {
   // height: 400px;
   background-color: white;

@@ -11,8 +11,10 @@
 
 
 
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+
 
 </head>
 <body>
@@ -49,7 +51,9 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12" style="padding: 0px 30px 80px 30px;">
+                         <p class="notice"><%= notice %></p>
+                        <p class="alert"><%= alert %></p>
+                    <div class="" style="padding: 0px 30px 80px 30px;">
                         <%= yield %>
 <!--                         <a href="#menu-toggle" class="" id="menu-toggle">Toggle Menu</a> -->
                     </div>
@@ -61,6 +65,7 @@
     </div>
 
 
+<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.js"></script>
 
 </body>
 </html>

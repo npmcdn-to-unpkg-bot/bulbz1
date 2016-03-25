@@ -1,19 +1,24 @@
 
+<div class="">
 
-
-
-
+<div class="grid">
 
 <% @bulbs.each do |bulb| %>
-    <div class="col-lg-4 bulb_card">
+    <div class="grid-item">
       <div class="row bulb_hl">
       <h4>A <span class="index_mega"><%= bulb.art %></span></h4>
-      <h4>for <span class="index_mega"> <%= bulb.target %></span></h4>
+      <h4>for <span class="index_mega_color"> <%= bulb.target %></span></h4>
       <h4>who <span class="index_mega"> <%= bulb.verb %></span></h4>
       <h4><span class="index_mega2"> <%= bulb.need %></span></h4>
       </div>
     </div>
 <% end %>
+
+
+</div>
+
+
+</div>
 
 
 
