@@ -36,6 +36,9 @@
                    <a href="/apps">All apps(<%= App.all.count %>)</a>
                 </li>
                 <li>
+                   <a href="/platforms">All platforms(<%= Platform.count %>)</a>
+                </li>
+                <li>
                     <a href="#">Your public blbz</a>
                 </li>
                                 <li>
@@ -44,6 +47,14 @@
 
                 <li>
                   <%= link_to 'New Bulb', new_bulb_path %>
+                </li>
+
+                <li>
+                  <%= link_to 'New App', new_app_path %>
+                </li>
+
+                <li>
+                  <%= link_to 'New Platform', new_platform_path %>
                 </li>
 
             </ul>

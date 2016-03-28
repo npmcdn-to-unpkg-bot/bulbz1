@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325121423) do
+ActiveRecord::Schema.define(version: 20160328072458) do
+
+  create_table "apps", force: :cascade do |t|
+    t.string   "title"
+    t.string   "target"
+    t.text     "description"
+    t.string   "picture"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "bulbs", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,6 +39,18 @@ ActiveRecord::Schema.define(version: 20160325121423) do
     t.text     "description"
     t.string   "art"
     t.string   "picture"
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string   "title"
+    t.string   "target1"
+    t.string   "target2"
+    t.text     "description"
+    t.text     "gain1"
+    t.text     "gain2"
+    t.string   "picture"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

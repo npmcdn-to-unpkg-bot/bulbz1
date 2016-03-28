@@ -30,7 +30,7 @@ input {
   text-transform: uppercase;
   box-shadow: 0 4px 2px 0 rgba(0,0,0,0.2);
   background-color:white;
-  width: 500px;
+  width: 570px;
 }
 
 .bulb_type {
@@ -57,7 +57,7 @@ textarea {
   text-transform: uppercase;
   box-shadow: 0 4px 2px 0 rgba(0,0,0,0.2);
   background-color:white;
-  width: 500px;
+  width: 570px;
   height: 300px;
 
   &.text_area_small {
@@ -133,6 +133,18 @@ select:focus, input:focus, textarea:focus {
   padding: 10px;
   text-transform: uppercase;
   background-color: #FB375D;
+  color: white;
+}
+
+.index_mega_color_platform {
+  font-family: $main_font2;
+  font-weight: bolder;
+  border:none;
+  border-radius: 0;
+  font-size: 30px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: #FCF350;
   color: white;
 }
 
@@ -225,7 +237,7 @@ select:focus, input:focus, textarea:focus {
 }
 
 .submit_button {
-  width: 500px;
+  width: 570px;
   margin-top: 20px;
   background-color: #FB375D;
   color: white;

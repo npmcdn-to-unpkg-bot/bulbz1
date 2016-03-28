@@ -1,0 +1,25 @@
+<%= form_for(@platform) do |f| %>
+  <% if @platform.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@platform.errors.count, "error") %> prohibited this platform from being saved:</h2>
+
+      <ul>
+      <% @platform.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <h3><%= f.text_field :title %></h3>
+  <h3>is a <span class="bulb_type">PLATFORM</span> that connects</h3>
+  <h3><%= f.text_field :target1 %></h3>
+  <h3 style="padding-left: 250px"><span class="bulb_type">+</span></h3>
+  <h3><%= f.text_field :target2 %></h3>
+  <h3>It provides mutual gains by..</h3>
+  <h3><%= f.text_area(:description, :class => "text_area_small") %></h3>
+  <%= f.submit("CREATE BULB", :class => "submit_button") %>
+
+
+<% end %>
