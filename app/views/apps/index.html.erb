@@ -1,0 +1,90 @@
+<div class="">
+
+<div class="grid">
+<div class="grid-sizer"></div>
+<% @apps.reverse.each do |app| %>
+    <div class="grid-item">
+
+      <% if app.picture != nil %>
+      <div class="row bulb_hl">
+        <img src="<%= app.picture %>" width="100%">
+      </div>
+      <% end %>
+
+      <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
+        <div class="col-xs-12" style="padding: 0px;">
+          <h4 style="margin-bottom: 20px;" class="index_mega"><span style="width: 100%"><%= app.title %></span></h4>
+<!--           <img src="http://40.media.tumblr.com/4acc2a446cc63f3a52353a6c673391b1/tumblr_nm6y9hzrla1roigg6o1_1280.png" width="100%" style="margin-bottom: 20px;"> -->
+        </div>
+      </div>
+
+      <div class="row bulb_hl" style="padding-top: 0px">
+          <div class="col-xs-2">
+            <h4 style="margin-bottom: 0px; padding-top: 15px;">An</h4>
+          </div>
+          <div class="col-xs-5">
+            <h4 style="margin-bottom: 0px;"><span class="index_mega_color">APP</span></h4>
+          </div>
+          <div class="col-xs-5">
+            <h4 style="margin-bottom: 0px; padding-top: 15px;">that helps</h4>
+          </div>
+      </div>
+
+      <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
+        <h4 class="index_mega"><span ><%= app.target %></span></h4>
+        <h4 style="margin: 20px 0px 0px 0px;"><%= app.description %></h4>
+      </div>
+
+
+    </div>
+<% end %>
+
+
+</div>
+
+
+</div>
+
+<div class="fut" style="display: none">
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Target</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |app| %>
+      <tr>
+        <td><%= app.title %></td>
+        <td><%= app.target %></td>
+        <td><%= app.description %></td>
+        <td><%= app.picture %></td>
+        <td><%= link_to 'Show', app %></td>
+        <td><%= link_to 'Edit', edit_app_path(app) %></td>
+        <td><%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New App', new_app_path %>
+
+</div>
