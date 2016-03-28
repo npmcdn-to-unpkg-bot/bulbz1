@@ -25,7 +25,7 @@ class BulbsController < ApplicationController
   # POST /bulbs.json
   def create
     @bulb = Bulb.new(bulb_params)
-    search_results = Unsplash::Photo.search(@bulb.target)
+      search_results = Unsplash::Photo.search(@bulb.target)
       if search_results.count != 0
         @bulb.picture = search_results.sample.urls["small"]
       end

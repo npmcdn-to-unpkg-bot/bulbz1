@@ -10,7 +10,7 @@
     <div class="grid-item">
 
       <% if bulb.picture != nil %>
-      <div class="row bulb_hl">
+      <div class="row bulb_hl" style="padding-top: 10px">
         <img src="<%= bulb.picture %>" width="100%">
       </div>
       <% end %>
@@ -50,7 +50,7 @@
     <div class="grid-item">
 
       <% if bulb.picture != nil %>
-      <div class="row bulb_hl">
+      <div class="row bulb_hl" style="padding-top: 10px">
         <img src="<%= bulb.picture %>" width="100%">
       </div>
       <% end %>
@@ -85,13 +85,55 @@
 
   <% end %>
 
+<% if bulb.category == "shop" %>
 
-  <% if bulb.category == "platform" %>
+    <div class="grid-item">
+
+      <% if bulb.picture != nil %>
+      <div class="row bulb_hl" style="padding-top: 10px">
+        <img src="<%= bulb.picture %>" width="100%">
+      </div>
+      <% end %>
+
+      <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
+        <div class="col-xs-12" style="padding: 0px;">
+          <h4 style="margin-bottom: 20px; text-align: center" class="index_mega"><span style="width: 100%"><%= bulb.title %></span></h4>
+<!--           <img src="http://40.media.tumblr.com/4acc2a446cc63f3a52353a6c673391b1/tumblr_nm6y9hzrla1roigg6o1_1280.png" width="100%" style="margin-bottom: 20px;"> -->
+        </div>
+      </div>
+
+      <div class="row bulb_hl" style="padding-top: 0px">
+          <div class="col-xs-3" style="padding-left: 0px">
+            <h4 style="margin-bottom: 0px; padding-top: 15px;">is a</h4>
+          </div>
+          <div class="col-xs-9" style="padding-right: 0px" >
+            <h4 style="margin-bottom: 0px; margin-top: 0px;" class="index_mega_color_shop"><span>SHOP</span></h4>
+          </div>
+      </div>
+
+
+
+      <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
+        <h4 style="margin-bottom: 20px; padding-top: 0px; margin-top: 10px">that sells</h4>
+        <h4 class="index_mega_light" style="margin: 20px 0px 0px 0px;"><%= bulb.description %></h4>
+        <h4 style="margin-bottom: 20px; padding-top: 0px; margin-top: 20px">to</h4>
+        <h4 class="index_mega_light"><span ><%= bulb.target %></span></h4>
+
+      </div>
+
+
+    </div>
+
+
+  <% end %>
+
+
+<% if bulb.category == "platform" %>
 
 <div class="grid-item">
 
       <% if bulb.picture != nil %>
-      <div class="row bulb_hl">
+      <div class="row bulb_hl" style="padding-top: 10px">
         <img src="<%= bulb.picture %>" width="100%">
       </div>
       <% end %>

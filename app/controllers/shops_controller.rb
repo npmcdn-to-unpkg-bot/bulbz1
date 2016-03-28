@@ -1,38 +1,38 @@
-class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+class ShopsController < ApplicationController
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
-  # GET /services
-  # GET /services.json
+  # GET /shops
+  # GET /shops.json
   def index
-    @services = Service.all
+    @shops = Shop.all
   end
 
-  # GET /services/1
-  # GET /services/1.json
+  # GET /shops/1
+  # GET /shops/1.json
   def show
   end
 
-  # GET /services/new
+  # GET /shops/new
   def new
-    @service = Service.new
+    @shop = Shop.new
   end
 
-  # GET /services/1/edit
+  # GET /shops/1/edit
   def edit
   end
 
-  # POST /services
-  # POST /services.json
+  # POST /shops
+  # POST /shops.json
   def create
-    @service = Service.new(service_params)
-    @service.save
+    @shop = Shop.new(shop_params)
+    @shop.save
 
     @bulb = Bulb.new
-    @bulb.title = params[:service][:title]
-    @bulb.description = params[:service][:description]
-    @bulb.target = params[:service][:target]
-    @bulb.category = "service"
-    @bulb.ref_id = @service.id
+    @bulb.title = params[:shop][:title]
+    @bulb.description = params[:shop][:description]
+    @bulb.target = params[:shop][:target]
+    @bulb.category = "shop"
+    @bulb.ref_id = @shop.id
     @bulb.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
@@ -64,53 +64,53 @@ class ServicesController < ApplicationController
       if picture_results.count != 0
         @bulb.picture = picture_results.sample.urls["small"]
         @bulb.save
-        @service.picture = @bulb.picture
-        @service.save
+        @shop.picture = @bulb.picture
+        @shop.save
     end
 
     respond_to do |format|
-      if @service.save
-        format.html { redirect_to bulbs_url }
-        format.json { render :show, status: :created, location: @service }
+      if @shop.save
+        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
+        format.json { render :show, status: :created, location: @shop }
       else
         format.html { render :new }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
+        format.json { render json: @shop.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /services/1
-  # PATCH/PUT /services/1.json
+  # PATCH/PUT /shops/1
+  # PATCH/PUT /shops/1.json
   def update
     respond_to do |format|
-      if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Service was successfully updated.' }
-        format.json { render :show, status: :ok, location: @service }
+      if @shop.update(shop_params)
+        format.html { redirect_to @shop, notice: 'Shop was successfully updated.' }
+        format.json { render :show, status: :ok, location: @shop }
       else
         format.html { render :edit }
-        format.json { render json: @service.errors, status: :unprocessable_entity }
+        format.json { render json: @shop.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /services/1
-  # DELETE /services/1.json
+  # DELETE /shops/1
+  # DELETE /shops/1.json
   def destroy
-    @service.destroy
+    @shop.destroy
     respond_to do |format|
-      format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
+      format.html { redirect_to shops_url, notice: 'Shop was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_service
-      @service = Service.find(params[:id])
+    def set_shop
+      @shop = Shop.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def service_params
-      params.require(:service).permit(:title, :target, :description, :picture)
+    def shop_params
+      params.require(:shop).permit(:title, :target, :description, :picture)
     end
 end

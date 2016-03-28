@@ -36,6 +36,39 @@ class PlatformsController < ApplicationController
     @bulb.ref_id = @platform.id
     @bulb.save
 
+    uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Post.new(uri.request_uri)
+    # Set POST data
+    request.body = {text_list: [@bulb.description]}.to_json
+    request.add_field("Content-Type", "application/json")
+    request.add_field("Authorization", "token c956c6be34d90185c5eab3c04a8f58416259aa67")
+    # parse the monkeylearn respons
+    response = JSON.parse http.request(request).body
+    response_array = response["result"].first
+
+    keywords = Array.new
+
+    response_array.each do |response|
+      keywords << response["keyword"]
+    end
+
+    keywords.each do |keyword|
+      k = Keyword.new
+      k.bulb_id = @bulb.id
+      k.content = keyword
+      k.save
+    end
+
+    picture_results = Unsplash::Photo.search(keywords.sample)
+      if picture_results.count != 0
+        @bulb.picture = picture_results.sample.urls["small"]
+        @bulb.save
+        @platform.picture = @bulb.picture
+        @platform.save
+    end
+
     respond_to do |format|
       if @platform.save
         format.html { redirect_to platforms_url }
