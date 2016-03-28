@@ -73,6 +73,6 @@ class BulbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bulb_params
-      params.require(:bulb).permit(:user_id, :title, :what, :forwhom, :why, :need, :category, :private, :target, :verb, :description, :art)
+      params.require(:bulb).permit(:user_id, :title, :what, :forwhom, :why, :need, :category, :private, :target, :target2, :verb, :description, :art)
     end
 end

@@ -24,7 +24,18 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.json
   def create
+
     @app = App.new(app_params)
+    @app.save
+
+    @bulb = Bulb.new
+    @bulb.title = params[:app][:title]
+    @bulb.description = params[:app][:description]
+    @bulb.target = params[:app][:target]
+    @bulb.category = "app"
+    @bulb.ref_id = @app.id
+    @bulb.save
+
 
     respond_to do |format|
       if @app.save

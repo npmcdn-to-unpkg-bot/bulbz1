@@ -25,6 +25,8 @@ class PlatformsController < ApplicationController
   # POST /platforms.json
   def create
     @platform = Platform.new(platform_params)
+    @bulb = Bulb.new(platform_params)
+    @bulb.save
 
     respond_to do |format|
       if @platform.save
