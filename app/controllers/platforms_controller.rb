@@ -25,7 +25,15 @@ class PlatformsController < ApplicationController
   # POST /platforms.json
   def create
     @platform = Platform.new(platform_params)
-    @bulb = Bulb.new(platform_params)
+    @platform.save
+
+    @bulb = Bulb.new
+    @bulb.title = params[:platform][:title]
+    @bulb.description = params[:platform][:description]
+    @bulb.target1 = params[:platform][:target1]
+    @bulb.target2 = params[:platform][:target2]
+    @bulb.category = "platform"
+    @bulb.ref_id = @platform.id
     @bulb.save
 
     respond_to do |format|
