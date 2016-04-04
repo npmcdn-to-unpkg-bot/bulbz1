@@ -14,7 +14,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Just+Another+Hand|Mr+Dafoe' rel='stylesheet' type='text/css'>
 
 
 
@@ -25,43 +25,43 @@
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav" style="padding: 20px;">
-                <li class="sidebar-brand">
-                    <a href="#" style="font-family: 'Courier', cursive; font-size: 40px; letter-spacing: 1px">
-                        bulbz.io <!-- <i class="fa fa-lightbulb-o"></i> -->
+            <ul class="sidebar-nav" style="padding: 140px 10px 20px 10px;">
+                <li class="sidebar-brand" style="text-align: center">
+                    <a href="#" style="font-family: 'Mr Dafoe', cursive; font-size: 80px; letter-spacing: 1px; text-align: center">
+                        Bulbz.io <!-- <i class="fa fa-lightbulb-o"></i> -->
                     </a>
                 </li>
-                <li style="margin-top: 0px;">
+                <li style="margin-top: 40px;">
                     <a href="/bulbs">All blbz(<%= Bulb.all.count %>)</a>
                 </li>
-                <li>
+                <li style="">
                    <a href="/apps">All apps(<%= App.all.count %>)</a>
                 </li>
-                <li>
+                <li style="">
                    <a href="/platforms">All platforms(<%= Platform.count %>)</a>
                 </li>
-                <li>
+                <li style="">
                     <a href="#">Your public blbz</a>
                 </li>
-                                <li>
+                                <li style="">
                     <a href="#">Your private blbz</a>
                 </li>
 
-                <li>
+                <li style="">
                   <%= link_to 'New Bulb', new_bulb_path %>
                 </li>
 
-                <li>
+                <li style="">
                   <%= link_to 'New App', new_app_path %>
                 </li>
 
-                <li>
+                <li style="">
                   <%= link_to 'New Platform', new_platform_path %>
                 </li>
-                <li>
+                <li style="">
                   <%= link_to 'New Service', new_service_path %>
                 </li>
-                                <li>
+                                <li style="">
                   <%= link_to 'New Shop', new_shop_path %>
                 </li>
 
@@ -71,9 +71,45 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
+
+
+
             <div class="container-fluid">
+
+
                 <div class="row">
-                    <div class="" style="padding: 0px 30px 80px 30px;">
+
+<!--                                         <nav class="navbar navbar-default" id="start_nav">
+
+                                            <div class="navbar-header">
+                                              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                              </button>
+                                            </div>
+                                            <div id="navbar" class="collapse navbar-collapse">
+                                              <div class="row" style="height: 30px;">
+                                                  <div class="col-sm-8"></div>
+                                                  <div class="col-sm-4" style="padding-top: 5px;">
+                                                      <a href="" style="color: grey;">Facebook Login</a>
+                                                  </div>
+                                              </div>
+
+                                            </div>
+
+                                        </nav> -->
+
+
+
+
+
+
+
+
+
+                    <div class="" style="padding: 30px 30px 80px 30px;">
                         <%= yield %>
 <!--                         <a href="#menu-toggle" class="" id="menu-toggle">Toggle Menu</a> -->
                     </div>

@@ -22,10 +22,10 @@
 #sidebar-wrapper {
     z-index: 1000;
     position: fixed;
-    left: 250px;
+    left: 330px;
     width: 0;
     height: 100%;
-    margin-left: -250px;
+    margin-left: -330px;
     overflow-y: auto;
     background: white;
     -webkit-transition: all 0.5s ease;
@@ -46,7 +46,7 @@
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
-    margin-right: -250px;
+    margin-right: -330px;
 }
 
 /* Sidebar Styles */
@@ -54,7 +54,7 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
+    width: 330px;
     margin: 0;
     padding: 20px;
     list-style: none;
@@ -92,12 +92,12 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: white;
+    color: black;
     background: none;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 50px;
     text-align: left;
-  background-color: black;
+  background-color: white;
   padding: 5px;
 }
 
@@ -112,7 +112,7 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
+        padding-left: 330px;
     }
 
     #wrapper.toggled {
@@ -120,7 +120,7 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 330px;
     }
 
     #wrapper.toggled #sidebar-wrapper {

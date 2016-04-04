@@ -47,6 +47,20 @@ input {
   width: 350px;
 }
 
+.navbar-default {
+  background-color: white;
+    border: 0px solid white;
+    padding: 25px 0px;
+    position: fixed;
+    z-index: 100000;
+    width: 100%;
+    border-radius: 0px;
+}
+
+.sidebar-nav li a {
+  text-align: center;
+}
+
 textarea {
   font-family: $main_font2;
   font-weight: bolder;
@@ -262,6 +276,10 @@ select:focus, input:focus, textarea:focus {
   padding: 20px;
 }
 
+.bulb_user_info {
+
+}
+
 .sidebar-brand {
   font-family: $main_font2;
 
@@ -294,4 +312,11 @@ select:focus, input:focus, textarea:focus {
 
 .submit_button:hover {
 
+}
+
+.keytag {
+  background-color: #BDC3C7;
+  color: white;
+  padding: 5px;
+  line-height: 30px;
 }

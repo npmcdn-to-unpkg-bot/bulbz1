@@ -9,11 +9,24 @@
 
     <div class="grid-item">
 
+      <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-3" style="padding-top: 12px">
+            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+          </div>
+          <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
+            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+          </div>
+        </div>
+      </div>
+
       <% if bulb.picture != nil %>
-      <div class="row bulb_hl" style="padding-top: 10px">
+      <div class="row bulb_hl" style="padding-top: 0px">
         <img src="<%= bulb.picture %>" width="100%">
       </div>
       <% end %>
+
 
       <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
         <div class="col-xs-12" style="padding: 0px;">
@@ -39,6 +52,35 @@
         <h4 style="margin: 20px 0px 0px 0px;"><%= bulb.description %></h4>
       </div>
 
+      <div class="row bulb_hl" style="display: none">
+          <h4 style="margin: 10px 0px 10px 0px;">AI Tags</h4>
+
+          <% keywords = Keyword.where(:bulb_id => bulb.id) %>
+          <h5>
+          <% keywords.each do |keyword| %>
+            <a href=""><span class="keytag"><%= keyword.content %></span></a>
+          <% end %>
+          </h5>
+      </div>
+
+
+
+      <div class="row bulb_hl" style="padding: 40px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-share-alt fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+              <i class="fa fa-commenting-o fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-lightbulb-o fa-2x"></i>
+          </div>
+
+        </div>
+      </div>
+
+
 
     </div>
 
@@ -48,6 +90,18 @@
   <% if bulb.category == "service" %>
 
     <div class="grid-item">
+
+      <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-3" style="padding-top: 12px">
+            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+          </div>
+          <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
+            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+          </div>
+        </div>
+      </div>
 
       <% if bulb.picture != nil %>
       <div class="row bulb_hl" style="padding-top: 10px">
@@ -79,6 +133,32 @@
         <h4 style="margin: 20px 0px 0px 0px;"><%= bulb.description %></h4>
       </div>
 
+      <div class="row bulb_hl" style="display: none">
+          <h4 style="margin: 10px 0px 10px 0px;">AI Tags</h4>
+
+          <% keywords = Keyword.where(:bulb_id => bulb.id) %>
+          <h5>
+          <% keywords.each do |keyword| %>
+            <a href=""><span class="keytag"><%= keyword.content %></span></a>
+          <% end %>
+          </h5>
+      </div>
+
+            <div class="row bulb_hl" style="padding: 40px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-share-alt fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+              <i class="fa fa-commenting-o fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-lightbulb-o fa-2x"></i>
+          </div>
+
+        </div>
+      </div>
+
 
     </div>
 
@@ -88,6 +168,18 @@
 <% if bulb.category == "shop" %>
 
     <div class="grid-item">
+
+      <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-3" style="padding-top: 12px">
+            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+          </div>
+          <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
+            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+          </div>
+        </div>
+      </div>
 
       <% if bulb.picture != nil %>
       <div class="row bulb_hl" style="padding-top: 10px">
@@ -121,6 +213,32 @@
 
       </div>
 
+      <div class="row bulb_hl" style="display: none">
+          <h4 style="margin: 10px 0px 10px 0px;">AI Tags</h4>
+
+          <% keywords = Keyword.where(:bulb_id => bulb.id) %>
+          <h5>
+          <% keywords.each do |keyword| %>
+            <a href=""><span class="keytag"><%= keyword.content %></span></a>
+          <% end %>
+          </h5>
+      </div>
+
+            <div class="row bulb_hl" style="padding: 40px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-share-alt fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+              <i class="fa fa-commenting-o fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-lightbulb-o fa-2x"></i>
+          </div>
+
+        </div>
+      </div>
+
 
     </div>
 
@@ -131,6 +249,18 @@
 <% if bulb.category == "platform" %>
 
 <div class="grid-item">
+
+      <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-3" style="padding-top: 12px">
+            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+          </div>
+          <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
+            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+          </div>
+        </div>
+      </div>
 
       <% if bulb.picture != nil %>
       <div class="row bulb_hl" style="padding-top: 10px">
@@ -159,6 +289,32 @@
         <h4 class="index_mega_light"><span ><%= bulb.target1 %></span></h4>
         <h4 style="margin-bottom: 20px; padding-top: 10px; margin-top: 0px">and</h4>
         <h4 class="index_mega_light" style="margin: 20px 0px 0px 0px;"><%= bulb.target2 %></h4>
+      </div>
+
+      <div class="row bulb_hl" style="display: none">
+          <h4 style="margin: 10px 0px 10px 0px;">AI Tags</h4>
+
+          <% keywords = Keyword.where(:bulb_id => bulb.id) %>
+          <h5>
+          <% keywords.each do |keyword| %>
+            <a href=""><span class="keytag"><%= keyword.content %></span></a>
+          <% end %>
+          </h5>
+      </div>
+
+            <div class="row bulb_hl" style="padding: 40px 20px 20px 20px;">
+        <div class="row bulb_user_info">
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-share-alt fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+              <i class="fa fa-commenting-o fa-2x"></i>
+          </div>
+          <div class="col-xs-4" style="padding-top: 0px; color: grey; text-align: center;">
+            <i class="fa fa-lightbulb-o fa-2x"></i>
+          </div>
+
+        </div>
       </div>
 
 
