@@ -115,6 +115,33 @@ select:focus, input:focus, textarea:focus {
   outline: none;
 }
 
+.modal-content {
+  border: 0px solid white;
+  border-radius: 0px;
+}
+
+.modal-header {
+  text-align: center;
+  color: black !important;
+  border: 0px solid white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.btn-bulb {
+  background-color: rgba(0,0,0,0);
+  border: 0px solid white;
+  padding: 31px 50px;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #FB375D;
+
+}
+
 .index_mega {
   font-family: $main_font2;
   font-weight: bolder;

@@ -41,20 +41,22 @@
                 <li style="margin-top: 40px;">
                     <a href="/bulbs">All blbz(<%= Bulb.all.count %>)</a>
                 </li>
-                <li style="">
+              <!--   <li style="">
                    <a href="/apps">All apps(<%= App.all.count %>)</a>
                 </li>
                 <li style="">
                    <a href="/platforms">All platforms(<%= Platform.count %>)</a>
-                </li>
+                </li> -->
                 <li style="">
-                    <a href="#">Your public blbz</a>
+                    <% if current_user.present? %>
+                    <a href="#">Your blbz(<%= Bulb.where(:user_id => current_user.id).count %>)</a>
+                    <% end %>
                 </li>
-                                <li style="">
+<!--                 <li style="">
                     <a href="#">Your private blbz</a>
-                </li>
+                </li> -->
 
-                <li style="">
+             <!--    <li style="">
                   <%= link_to 'New Bulb', new_bulb_path %>
                 </li>
 
@@ -70,7 +72,16 @@
                 </li>
                                 <li style="">
                   <%= link_to 'New Shop', new_shop_path %>
+                </li> -->
+
+
+                <li>
+                  <button type="button" class="btn btn-bulb" data-toggle="modal" data-target="#myModal">
+                    I had an idea !
+                  </button>
                 </li>
+
+
 
                 <li>
                 <% if current_user %>
@@ -86,9 +97,20 @@
                   <% end %>
                 </li>
 
+
+
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+
+
+
+
+
+
+
+
+
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
@@ -123,7 +145,29 @@
                                         </nav> -->
 
 
+<!-- MODAL -->
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="padding: 60px">
+      <div class="modal-header" style="margin-top: 30px;">
+  <!--       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+                    <a href="#" style="font-family: 'Mr Dafoe', cursive; font-size: 30px; letter-spacing: 1px; text-align: center; color: black">
+                        My idea is ...  <!-- <i class="fa fa-lightbulb-o"></i> -->
+                    </a>
+      </div>
+      <div class="modal-body">
+        <a href="/apps/new"><h4 style="margin-bottom: 0px; margin-top: 0px; text-align: center; margin-left: 50px; margin-right: 50px" class="index_mega_color"><span>AN APP</span></h4></a>
+        <a href="/services/new"><h4 style="margin-bottom: 0px; margin-top: 10px; text-align: center; margin-left: 50px; margin-right: 50px" class="index_mega_color_service"><span>A SERVICE</span></h4></a>
+        <a href="/shops/new"><h4 style="margin-bottom: 0px; margin-top: 10px; text-align: center; margin-left: 50px; margin-right: 50px" class="index_mega_color_shop"><span>A SHOP</span></h4></a>
+          <a href="/platforms/new"><h4 style="margin-bottom: 50px; margin-top: 10px; text-align: center; margin-left: 50px; margin-right: 50px" class="index_mega_color_platform"><span>A PLATFORM</span></h4></a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- END OF MODAL -->
 
 
 
