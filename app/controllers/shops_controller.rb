@@ -33,6 +33,7 @@ class ShopsController < ApplicationController
     @bulb.target = params[:shop][:target]
     @bulb.category = "shop"
     @bulb.ref_id = @shop.id
+        @bulb.user_id = current_user.id
     @bulb.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
@@ -70,7 +71,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
+        format.html { redirect_to bulbs_url }
         format.json { render :show, status: :created, location: @shop }
       else
         format.html { render :new }

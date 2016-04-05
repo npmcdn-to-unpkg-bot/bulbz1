@@ -34,6 +34,7 @@ class PlatformsController < ApplicationController
     @bulb.target2 = params[:platform][:target2]
     @bulb.category = "platform"
     @bulb.ref_id = @platform.id
+        @bulb.user_id = current_user.id
     @bulb.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
@@ -71,7 +72,7 @@ class PlatformsController < ApplicationController
 
     respond_to do |format|
       if @platform.save
-        format.html { redirect_to platforms_url }
+        format.html { redirect_to bulbs_url }
         format.json { render :show, status: :created, location: @platform }
       else
         format.html { render :new }

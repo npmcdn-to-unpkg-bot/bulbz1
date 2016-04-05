@@ -33,6 +33,7 @@ class ServicesController < ApplicationController
     @bulb.target = params[:service][:target]
     @bulb.category = "service"
     @bulb.ref_id = @service.id
+        @bulb.user_id = current_user.id
     @bulb.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")

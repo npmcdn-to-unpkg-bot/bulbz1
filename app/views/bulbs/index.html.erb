@@ -5,6 +5,8 @@
 <div class="grid-sizer"></div>
 <% @bulbs.reverse.each do |bulb| %>
 
+  <% bulb_creator = User.find_by(:id => bulb.user.id) %>
+
   <% if bulb.category == "app" %>
 
     <div class="grid-item">
@@ -12,11 +14,11 @@
       <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
         <div class="row bulb_user_info">
           <div class="col-xs-3" style="padding-top: 12px">
-            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+            <img src="<%= bulb_creator.profile_picture %>" class="img img-circle">
           </div>
           <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
-            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
-            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" ><%= bulb_creator.name %>  </a>
+            <h6 style="color: grey; margin-top: 0px;"><%= time_ago_in_words(bulb.created_at) %> ago</h6>
           </div>
         </div>
       </div>
@@ -94,11 +96,11 @@
       <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
         <div class="row bulb_user_info">
           <div class="col-xs-3" style="padding-top: 12px">
-            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+            <img src="<%= bulb_creator.profile_picture %>" class="img img-circle">
           </div>
           <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
-            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
-            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" ><%= bulb_creator.name %>  </a>
+            <h6 style="color: grey; margin-top: 0px;"><%= time_ago_in_words(bulb.created_at) %> ago</h6>
           </div>
         </div>
       </div>
@@ -172,11 +174,11 @@
       <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
         <div class="row bulb_user_info">
           <div class="col-xs-3" style="padding-top: 12px">
-            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+            <img src="<%= bulb_creator.profile_picture %>" class="img img-circle">
           </div>
           <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
-            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
-            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" ><%= bulb_creator.name %>  </a>
+            <h6 style="color: grey; margin-top: 0px;"><%= time_ago_in_words(bulb.created_at) %> ago</h6>
           </div>
         </div>
       </div>
@@ -253,11 +255,11 @@
       <div class="row bulb_hl" style="padding: 0px 20px 20px 20px;">
         <div class="row bulb_user_info">
           <div class="col-xs-3" style="padding-top: 12px">
-            <img src="http://elfnordics.com/mediabank/var/resizes/e.l.f.-Scandinavia-Staff/PROFILE-Celine-01-square.jpg" class="img img-circle">
+            <img src="<%= bulb_creator.profile_picture %>" class="img img-circle">
           </div>
           <div class="col-xs-9" style="padding-top: 13px; padding-left: 0px;">
-            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" >Lisa  </a>
-            <h6 style="color: grey; margin-top: 0px;">49 minutes ago</h6>
+            <h5 style="margin-bottom: 0px"><a href="" style="font-weight: 700; font-family: 'Montserrat'; text-transform: uppercase; color: grey" ><%= bulb_creator.name %>  </a>
+            <h6 style="color: grey; margin-top: 0px;"><%= time_ago_in_words(bulb.created_at) %> ago</h6>
           </div>
         </div>
       </div>

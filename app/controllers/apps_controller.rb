@@ -38,6 +38,7 @@ class AppsController < ApplicationController
     @bulb.target = params[:app][:target]
     @bulb.category = "app"
     @bulb.ref_id = @app.id
+    @bulb.user_id = current_user.id
     @bulb.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
@@ -76,7 +77,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to apps_url }
+        format.html { redirect_to bulbs_url }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
