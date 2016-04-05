@@ -11,6 +11,7 @@ class BulbsController < ApplicationController
   # GET /bulbs/1.json
   def show
     @bulb = Bulb.find_by(:id => params[:id])
+    @keywords = Keyword.where(:bulb_id => @bulb.id)
   end
 
   # GET /bulbs/new
