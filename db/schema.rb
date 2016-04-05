@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405045840) do
+ActiveRecord::Schema.define(version: 20160405071939) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "title"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160405045840) do
     t.string   "cat"
     t.integer  "ref_id"
     t.string   "target1"
+    t.string   "big_picture"
   end
 
   create_table "keywords", force: :cascade do |t|

@@ -63,7 +63,9 @@ class ServicesController < ApplicationController
 
     picture_results = Unsplash::Photo.search(keywords.sample)
       if picture_results.count != 0
-        @bulb.picture = picture_results.sample.urls["small"]
+        picture_sample = picture_results.sample
+        @bulb.picture = picture_sample.urls["small"]
+        @bulb.big_picture = picture_sample.urls["regular"]
         @bulb.save
         @service.picture = @bulb.picture
         @service.save
@@ -112,6 +114,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :target, :description, :picture)
+      params.require(:service).permit(:title, :target, :description, :picture, :big_picture)
     end
 end

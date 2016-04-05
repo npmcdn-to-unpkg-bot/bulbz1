@@ -10,6 +10,7 @@ class BulbsController < ApplicationController
   # GET /bulbs/1
   # GET /bulbs/1.json
   def show
+    @bulb = Bulb.find_by(:id => params[:id])
   end
 
   # GET /bulbs/new
@@ -73,6 +74,6 @@ class BulbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bulb_params
-      params.require(:bulb).permit(:user_id, :title, :what, :forwhom, :why, :need, :category, :private, :target, :target2, :verb, :description, :art)
+      params.require(:bulb).permit(:user_id, :title, :what, :forwhom, :why, :need, :category, :private, :target, :target2, :verb, :description, :art, :picture, :big_picture)
     end
 end

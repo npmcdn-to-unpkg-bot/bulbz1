@@ -68,7 +68,9 @@ class AppsController < ApplicationController
 
     picture_results = Unsplash::Photo.search(keywords.sample)
       if picture_results.count != 0
-        @bulb.picture = picture_results.sample.urls["small"]
+        picture_sample = picture_results.sample
+        @bulb.picture = picture_sample.urls["small"]
+        @bulb.big_picture = picture_sample.urls["regular"]
         @bulb.save
         @app.picture = @bulb.picture
         @app.save
@@ -118,6 +120,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:title, :target, :description, :picture)
+      params.require(:app).permit(:title, :target, :description, :picture, :big_picture)
     end
 end

@@ -1,3 +1,67 @@
+
+<% if @bulb.picture != nil %>
+
+<div class="bulb_header_img" style="
+  min-height: 600px;
+
+  position: relative;
+  background-repeat: repeat;
+  background-color: black;
+  max-width: 100%;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+      ),
+       url('<%= @bulb.big_picture %>') no-repeat top center;
+
+  background-size: cover;
+">
+
+
+<h4 style="margin-bottom: 20px; text-align: center" class="index_mega_headline"><span style="width: 100%"><%= @bulb.title %></span></h4>
+
+<div class="bulb_details">
+
+
+
+      <div class="row bulb_hl" style="padding-top: 0px">
+          <div class="col-xs-4" style="padding-left: 0px; background-color: white">
+            <h4 style="margin-bottom: 0px; padding-top: 15px;" class="index_mega_white_big">is an</h4>
+          </div>
+          <div class="col-xs-8" style="padding-right: 0px" >
+            <h4 style="margin-bottom: 0px; margin-top: 0px;" class="index_mega_color_big"><span>APP</span></h4>
+          </div>
+      </div>
+
+
+
+      <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px">
+          <div class="col-xs-4" style="padding-left: 0px; background-color: white">
+            <h4 style="margin-bottom: 0px; padding-top: 15px;" class="index_mega_white_big">that helps</h4>
+          </div>
+          <div class="col-xs-8" style="padding-right: 0px" >
+            <h4 style="margin: 0px;" class="index_mega_headline"><span><%= @bulb.target %></span></h4>
+          </div>
+        <h4 class="index_mega_light"><span ></span></h4>
+
+      </div>
+
+    <div class="row bulb_hl" style="padding-top: 0px; padding-bottom: 0px; background-color: white; margin: 30px 5px;">
+      <div class="col-sm-12">
+        <h4 style="margin: 20px 0px"><strong>DETAILS:</strong><br><br> <%= @bulb.description %></h4>
+      </div>
+    </div>
+
+
+</div>
+
+</div>
+
+<% end %>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
 <p>

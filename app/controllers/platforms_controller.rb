@@ -64,7 +64,9 @@ class PlatformsController < ApplicationController
 
     picture_results = Unsplash::Photo.search(keywords.sample)
       if picture_results.count != 0
-        @bulb.picture = picture_results.sample.urls["small"]
+        picture_sample = picture_results.sample
+        @bulb.picture = picture_sample.urls["small"]
+        @bulb.big_picture = picture_sample.urls["regular"]
         @bulb.save
         @platform.picture = @bulb.picture
         @platform.save
@@ -113,6 +115,6 @@ class PlatformsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def platform_params
-      params.require(:platform).permit(:title, :target1, :target2, :description, :gain1, :gain2, :picture)
+      params.require(:platform).permit(:title, :target1, :target2, :description, :gain1, :gain2, :picture, :big_picture)
     end
 end
