@@ -4,7 +4,7 @@ $main_font: 'Courier New', sans-serif;
 $main_font2: 'Montserrat', sans-serif;
 
 body {
-  background-color: #ECF0F1;
+  background-color: #D24D57;
   font-family: $main_font;
 }
 
@@ -135,10 +135,11 @@ a:hover {
   border: 0px solid white;
   padding: 31px 50px;
   font-family: 'Mr Dafoe', cursive;
-  font-size: 30px;
+  font-size: 40px;
   letter-spacing: 1px;
   text-align: center;
   color: #FB375D;
+  font-weight: bolder;
 
 }
 
@@ -299,8 +300,16 @@ a:hover {
 //   padding: 20px;
 //   margin-bottom: 0px;
 //   float: left;
-//   border: 20px solid #ECF0F1;
+//   border: 20px solid #D24D57;
 // }
+
+.grid-item2 {
+    background-color: white;
+  padding: 20px;
+  margin-bottom: 0px;
+  float: left;
+  border: 20px solid #D24D57;
+}
 
 .grid {
 
@@ -333,7 +342,7 @@ a:hover {
   padding: 20px;
   margin-bottom: 0px;
   float: left;
-  border: 20px solid #ECF0F1;
+  border: 20px solid #D24D57;
 }
 
 .grid-item img {
@@ -346,7 +355,7 @@ a:hover {
 .bulb_card {
   // height: 400px;
   background-color: white;
-  border: 15px solid #ECF0F1;
+  border: 15px solid #D24D57;
 }
 
 .bulb_hl {
