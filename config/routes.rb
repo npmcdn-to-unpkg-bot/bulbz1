@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
+  root 'static_pages#welcome'
+
+  match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
+  match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
+
 
   resources :shops
   resources :services
-  devise_for :users
   get 'static_pages/welcome'
 
   resources :bulbs
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#welcome'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
