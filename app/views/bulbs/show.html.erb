@@ -21,7 +21,7 @@
 
   <% if @bulb.category == "app" %>
 
-    <div class="col-sm-6 grid-item2">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
 
 
 
@@ -80,7 +80,7 @@
 
   <% if @bulb.category == "service" %>
 
-    <div class="col-sm-6 grid-item2">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
 
 
 
@@ -133,7 +133,7 @@
 
 <% if @bulb.category == "shop" %>
 
-    <div class="col-sm-6 grid-item2">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
 
 
 
@@ -188,7 +188,7 @@
 
 <% if @bulb.category == "platform" %>
 
-<div class="col-sm-6 grid-item2">
+<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
 
 
 
@@ -239,7 +239,7 @@
 
   <% end %>
 
-  <div class="col-sm-6 grid-item2">
+  <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
 
     <div class="row bulb_hl" style="margin-bottom: 30px;">
       <div class="col-sm-4 bulb_performance ">
@@ -264,7 +264,7 @@
             <img src="<%= bulb_creator.profile_picture %>" class="img img-circle" width="60">
           </div>
           <div class="col-xs-10" style="padding-top: 25px; padding-left: 15px;">
-            <p style="margin-bottom: 0px;"><a href="" style="font-family: 'Montserrat'"><strong><%= @bulb_creator.name %></strong></a></p>
+            <p style="margin-bottom: 0px;"><a href="/users/<%= @bulb_creator.id %>" style="font-family: 'Montserrat'"><strong><%= @bulb_creator.name %></strong></a></p>
             <p style="margin-top: -7px"><span style="font-size: 10px;"><%= time_ago_in_words(@bulb.created_at) %> ago</span>   </p>
           </div>
         </div>

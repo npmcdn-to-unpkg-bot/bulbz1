@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  get 'users/:id' => "users#show", as: "show_user"
 
   get 'keywords/index'
 

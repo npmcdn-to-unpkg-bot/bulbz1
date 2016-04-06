@@ -8,11 +8,19 @@ body {
   font-family: $main_font;
 }
 
+.col-md-4:nth-child(3n+1) {
+  clear: left;
+}
+
 .white_bg {
   width: 100%;
   background-color: white;
   border-left: 0px solid white;
   margin-left: -30px;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #FB375D;
 }
 
 h2 {
