@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      user.profile_picture = auth["info"]["image"] + "?width=600"
+      user.profile_picture = auth["info"]["image"] + "?width=600&height=600"
     end
   end
 end
