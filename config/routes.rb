@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get, :post]
 
 
+  get "/keywords" => "keywords#index"
+
   resources :shops
   resources :services
   get 'static_pages/welcome'

@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
+    @comment.keyword_generator
     redirect_to bulb_url(@comment.bulb_id)
   end
 

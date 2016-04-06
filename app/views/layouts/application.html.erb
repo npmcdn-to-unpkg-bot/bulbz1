@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li style="margin-top: 40px;">
-                    <a href="/bulbs">All blbz(<%= Bulb.all.count %>)</a>
+                    <a href="/bulbs">All blbz</a>
                 </li>
               <!--   <li style="">
                    <a href="/apps">All apps(<%= App.all.count %>)</a>
@@ -76,18 +76,24 @@
 
 
                 <li>
-                  <button type="button" class="btn btn-bulb" data-toggle="modal" data-target="#myModal">
-                    I have an idea !
-                  </button>
+<!--                   <button type="button" class="btn btn-bulb" data-toggle="modal" data-target="#myModal">
+                  <img class = "img img-circle" src="https://s3.eu-central-1.amazonaws.com/mybulbz/icons/bulb1_round_pink.png" style="width: 60%;">
+                  </button> -->
+                  <a href="" style="color: #FB375D" data-toggle="modal" data-target="#myModal">New bulb</a>
+                </li>
+
+                <li style="padding-bottom: 50px; border-bottom: 1px solid grey">
+                  AI Cloud
                 </li>
 
 
 
-                <li>
+                <li style="margin-top: 50px; padding-bottom: 50px; border-bottom: 1px solid grey">
                 <% if current_user %>
                   <div class="row">
                     <div class="col-sm-12">
-                      <%= current_user.name %>
+                      <img src="<%= current_user.profile_picture %>" class="img img-circle" width="80px">
+                      <p style="margin-bottom: 0px; margin-top: 20px;"><%= current_user.name %></p>
                       <%= link_to "Sign Out", signout_path %>
                     </div>
                   </div>
@@ -95,6 +101,16 @@
                   <% else %>
                     <%= link_to "Sign in with Facebook", "/auth/facebook" %>
                   <% end %>
+                </li>
+
+                <li style="margin-top: 50px">
+                  <a href="">About</a>
+                </li>
+                <li>
+                  <a href="">Blog</a>
+                </li>
+                <li>
+                  <a href="">Imprint</a>
                 </li>
 
 
