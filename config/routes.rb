@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'keywords/index'
+
   get 'comments/create'
 
   root 'bulbs#index'

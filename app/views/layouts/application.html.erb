@@ -49,7 +49,7 @@
                 </li> -->
                 <li style="">
                     <% if current_user.present? %>
-                    <a href="#">Your blbz(<%= Bulb.where(:user_id => current_user.id).count %>)</a>
+                    <a href="#">Your blbz</a>
                     <% end %>
                 </li>
 <!--                 <li style="">
@@ -83,7 +83,7 @@
                 </li>
 
                 <li style="padding-bottom: 50px; border-bottom: 1px solid grey">
-                  AI Cloud
+                  <%= link_to("AI Cloud", keywords_url) %>
                 </li>
 
 

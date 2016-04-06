@@ -274,9 +274,9 @@
 
    <div class="row bulb_hl" style="margin-bottom: 30px;">
 
-    <p style=""><strong>AI KEYWORDS<br></strong><span style="font-size: 10px;">Machine learning detection from bulb content and comments</span></p>
+    <p style=""><strong>AI KEYWORDS<br></strong><span style="font-size: 10px;">Machine learning detection from bulb content and comments (<a href="">MONKEY LEARN</a> API).</span></p>
 
-    <p>
+    <p  style="line-height: 40px;">
     <% @keywords.each do |keyword| %>
       <span style="color: white; background-color: black; padding: 5px;"><%= keyword.content %></span>
     <% end %>
@@ -285,8 +285,9 @@
    </div>
 
     <% if @bulb.picture != nil %>
-      <p><strong>PICTURES AND SCRIBBLES</strong> </p>
-      <div class="row bulb_hl" style="padding-top: 0px">
+
+        <p style=""><strong>PICTURES AND SCRIBBLES<br></strong><span style="font-size: 10px;">At the moment Bulbz.io hits the <a href="">UNSPLASH</a> API with a keyword from the description and chooses a random free stock picture from their amazing platform. <br> The option to add pictures and scribbles manually is coming soon.</span></p>
+      <div class="row bulb_hl" style="padding-top: 0px; padding-left: 15px; padding-right: 15px">
         <img src="<%= @bulb.picture %>" width="100%">
       </div>
     <% end %>
@@ -309,47 +310,4 @@
 
 
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @bulb.user_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @bulb.title %>
-</p>
-
-<p>
-  <strong>What:</strong>
-  <%= @bulb.what %>
-</p>
-
-<p>
-  <strong>Forwhom:</strong>
-  <%= @bulb.forwhom %>
-</p>
-
-<p>
-  <strong>Why:</strong>
-  <%= @bulb.why %>
-</p>
-
-<p>
-  <strong>Need:</strong>
-  <%= @bulb.need %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @bulb.category %>
-</p>
-
-<p>
-  <strong>Private:</strong>
-  <%= @bulb.private %>
-</p>
-
-<%= link_to 'Edit', edit_bulb_path(@bulb) %> |
-<%= link_to 'Back', bulbs_path %>
+<
