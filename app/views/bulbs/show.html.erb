@@ -79,7 +79,7 @@
       </div>
 
       <div class="row bulb_hl" style="margin-top: 15px">
-        <p style="">7 COMMENTS</p>
+        <%= render 'comment_form' %>
       </div>
 
 
@@ -143,6 +143,10 @@
           </div>
 
         </div>
+      </div>
+
+      <div class="row bulb_hl" style="margin-top: 15px">
+        <%= render 'comment_form' %>
       </div>
 
 
@@ -209,6 +213,10 @@
         </div>
       </div>
 
+      <div class="row bulb_hl" style="margin-top: 15px">
+        <%= render 'comment_form' %>
+      </div>
+
     </div>
 
 
@@ -270,6 +278,10 @@
         </div>
       </div>
 
+      <div class="row bulb_hl" style="margin-top: 15px">
+        <%= render 'comment_form' %>
+      </div>
+
 
     </div>
 
@@ -292,7 +304,7 @@
 
    <div class="row bulb_hl" style="margin-bottom: 30px;">
 
-    <p style="">AI KEYWORDS</p>
+    <p style=""><strong>AI KEYWORDS</strong></p>
 
     <p>
     <% @keywords.each do |keyword| %>
@@ -303,7 +315,7 @@
    </div>
 
     <% if @bulb.picture != nil %>
-      <p>PICTURES AND SCRIBBLES</p>
+      <p><strong>PICTURES AND SCRIBBLES</strong> </p>
       <div class="row bulb_hl" style="padding-top: 0px">
         <img src="<%= @bulb.picture %>" width="100%">
       </div>

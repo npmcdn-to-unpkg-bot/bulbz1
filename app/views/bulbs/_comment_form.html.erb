@@ -1,0 +1,53 @@
+<p><strong><%= @bulb.comments.count %> COMMENTS</strong></p>
+
+
+<% if @bulb.comments.count != 0 %>
+<% @bulb.comments.each do |comment| %>
+  <div class="row comment_row">
+    <div class="col-sm-2">
+      <img src="<%= comment.user.profile_picture %>" width="100%" class="img img-circle">
+    </div>
+    <div class="col-sm-9" style="margin-left: -15px">
+      <p style="margin-bottom: 0px;"><a href="" style="font-family: 'Montserrat'"><strong><%= comment.user.name %></strong></a> <span style="font-size: 10px;"><%= time_ago_in_words(comment.created_at) %> ago</span>   </p>
+      <p><%= comment.content %></p>
+    </div>
+  </div>
+<% end %>
+<% end %>
+
+
+
+<% if current_user.present? %>
+
+<%= form_for(@comment) do |f| %>
+
+
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this bulb from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.hidden_field :bulb_id, :value => @bulb.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+
+    <%= f.text_area :content, :class => "text_area_small2" %>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+            <%= f.submit("Post Comment", :class => "submit_button comment_button") %>
+      </div>
+    </div>
+
+
+<% end %>
+
+<% end %>

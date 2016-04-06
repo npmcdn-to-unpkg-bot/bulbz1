@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+
   root 'bulbs#index'
 
   match "/auth/:provider/callback" => "sessions#create", via: [:get, :post]
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   get 'static_pages/welcome'
 
   resources :bulbs
+  resources :comments
   resources :apps
   resources :platforms
   # The priority is based upon order of creation: first created -> highest priority.
