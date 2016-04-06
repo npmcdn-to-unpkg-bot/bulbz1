@@ -260,7 +260,7 @@
     <p><strong>BULB CREATOR</strong> </p>
       <% @bulb_creator = User.find_by(:id => @bulb.user.id) %>
         <div class="row bulb_user_info">
-          <div class="col-xs-2" style="padding-top: 12px">
+          <div class="col-xs-2 comment_user_pic" style="padding-top: 12px">
             <img src="<%= bulb_creator.profile_picture %>" class="img img-circle" width="60">
           </div>
           <div class="col-xs-10" style="padding-top: 25px; padding-left: 15px;">

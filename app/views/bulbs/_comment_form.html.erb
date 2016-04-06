@@ -5,7 +5,7 @@
 <% @bulb.comments.each do |comment| %>
   <div class="row comment_row">
     <div class="col-lg-2 comment_user_pic">
-      <img src="<%= comment.user.profile_picture %>" width="50px" class="img img-circle">
+      <img src="<%= comment.user.profile_picture %>" width="40px" class="img img-circle">
     </div>
     <div class="col-lg-9 comment_fut" style="">
       <p style="margin-bottom: 0px;"><a href="" style="font-family: 'Montserrat'"><strong><%= comment.user.name %></strong></a> <span style="font-size: 10px;"><%= time_ago_in_words(comment.created_at) %> ago</span>   </p>
