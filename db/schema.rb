@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405150424) do
+ActiveRecord::Schema.define(version: 20160407101748) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "title"
     t.string   "target"
     t.text     "description"
     t.string   "picture"
+    t.integer  "bulb_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -70,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160405150424) do
     t.text     "gain1"
     t.text     "gain2"
     t.string   "picture"
+    t.integer  "bulb_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 20160405150424) do
     t.string   "target"
     t.text     "description"
     t.string   "picture"
+    t.integer  "bulb_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -88,6 +91,7 @@ ActiveRecord::Schema.define(version: 20160405150424) do
     t.string   "target"
     t.text     "description"
     t.string   "picture"
+    t.integer  "bulb_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -99,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160405150424) do
     t.string   "profile_picture"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "email"
   end
 
 end

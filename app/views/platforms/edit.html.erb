@@ -1,6 +1,32 @@
-<h1>Editing Platform</h1>
+<div class="row">
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @platform %> |
-<%= link_to 'Back', platforms_path %>
+<div class="col-sm-12">
+
+<h1 id="add_platform_title" style="font-family: 'Mr Dafoe', cursive; font-size: 80px; letter-spacing: 1px; text-align: center; padding: 0px 60px 0px 60px; font-weight: bolder; margin-top: 0px; margin-bottom: 0px; line-height: 90px; color: white">Your bulb's title</h1>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="grid-item2 col-sm-8 col-sm-offset-2" style="margin-top: 20px; padding: 90px">
+
+  <%= render 'form' %>
+
+
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#platform_title").focusout( function(e) {
+    var content = e.target.value
+    $('#add_platform_title').text(content);
+
+    });
+  });
+</script>

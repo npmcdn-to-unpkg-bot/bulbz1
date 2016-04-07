@@ -1,0 +1,11 @@
+<p>Dear <%= @bulb.user.name %>,</p>
+<p><strong><%= @comment_creator.name %></strong> commented on your BULB <strong><%= @bulb.title %></strong>: <br><br></p>
+
+<p><small><%= @comment.content %></small><br><br></p>
+
+<% if Rails.env.development? %>
+<p>Click <a href="http://localhost:3000/bulbs/<%= @bulb.id %>">here</a> to go to your BULB.<br><br></p>
+<% else %>
+<p>Click <a href="http://www.bulbzapp.com/bulbs/<%= @bulb.id %>">here</a> to go to your BULB.<br><br></p>
+<% end %>
+<p>Keep bulbing!<br><br>Lukas & Philips from BULBZ</p>

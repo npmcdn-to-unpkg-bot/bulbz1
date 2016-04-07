@@ -33,8 +33,11 @@ class ShopsController < ApplicationController
     @bulb.target = params[:shop][:target]
     @bulb.category = "shop"
     @bulb.ref_id = @shop.id
-        @bulb.user_id = current_user.id
+    @bulb.user_id = current_user.id
     @bulb.save
+
+     @shop.bulb_id = @bulb.id
+     @shop.save
 
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
     http = Net::HTTP.new(uri.host, uri.port)
@@ -114,6 +117,6 @@ class ShopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:title, :target, :description, :picture, :big_picture)
+      params.require(:shop).permit(:title, :target, :description, :picture, :big_picture, :bulb_id)
     end
 end

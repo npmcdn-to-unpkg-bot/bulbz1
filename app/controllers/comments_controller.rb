@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.save
     @comment.keyword_generator
+    BulbMailer.new_comment_on_bulb(@comment).deliver_now
     redirect_to bulb_url(@comment.bulb_id)
   end
 

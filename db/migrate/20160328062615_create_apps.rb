@@ -5,6 +5,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :target
       t.text :description
       t.string :picture
+      t.integer :bulb_id
 
       t.timestamps null: false
     end

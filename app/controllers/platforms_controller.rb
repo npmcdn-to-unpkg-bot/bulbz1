@@ -37,6 +37,9 @@ class PlatformsController < ApplicationController
         @bulb.user_id = current_user.id
     @bulb.save
 
+      @platform.bulb_id = @bulb.id
+     @platform.save
+
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
@@ -115,6 +118,6 @@ class PlatformsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def platform_params
-      params.require(:platform).permit(:title, :target1, :target2, :description, :gain1, :gain2, :picture, :big_picture)
+      params.require(:platform).permit(:title, :target1, :target2, :description, :gain1, :gain2, :picture, :big_picture, :bulb_id)
     end
 end

@@ -8,6 +8,7 @@ class CreatePlatforms < ActiveRecord::Migration
       t.text :gain1
       t.text :gain2
       t.string :picture
+      t.integer :bulb_id
 
       t.timestamps null: false
     end

@@ -16,12 +16,16 @@
 <div class="row" style="margin-top: 30px">
 
 
-
+  <% if current_user.present? && current_user.id == @bulb.user.id  %>
+      <p style="background-color: white; color: black; padding: 5px; text-align: center; margin: 20px 20px"><strong><a href="/<%= @bulb.category %>s/<%= @bulb.id %>/edit">EDIT</a> | <a href="">DELETE</a></strong></p>
+  <% end %>
 
 
   <% if @bulb.category == "app" %>
 
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 grid-item2">
+
+
 
 
 

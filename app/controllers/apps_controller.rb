@@ -41,6 +41,9 @@ class AppsController < ApplicationController
     @bulb.user_id = current_user.id
     @bulb.save
 
+    @app.bulb_id = @bulb.id
+    @app.save
+
     uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
@@ -120,6 +123,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:title, :target, :description, :picture, :big_picture)
+      params.require(:app).permit(:title, :target, :description, :picture, :big_picture, :bulb_id)
     end
 end
