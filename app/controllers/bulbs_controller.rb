@@ -13,6 +13,26 @@ class BulbsController < ApplicationController
     @bulb = Bulb.find_by(:id => params[:id])
     @keywords = Keyword.where(:bulb_id => @bulb.id)
     @comment = Comment.new
+
+    if @bulb.category == "app"
+      @cat_id = App.find_by(:id => @bulb.ref_id).id
+    end
+
+    if @bulb.category == "service"
+      @cat_id = Service.find_by(:id => @bulb.ref_id).id
+    end
+
+    if @bulb.category == "shop"
+      @cat_id = Shop.find_by(:id => @bulb.ref_id).id
+    end
+
+    if @bulb.category == "platform"
+      @cat_id = Platform.find_by(:id => @bulb.ref_id).id
+    end
+
+
+
+
   end
 
   # GET /bulbs/new

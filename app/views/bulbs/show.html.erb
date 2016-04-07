@@ -17,7 +17,16 @@
 
 
   <% if current_user.present? && current_user.id == @bulb.user.id  %>
-      <p style="background-color: white; color: black; padding: 5px; text-align: center; margin: 20px 20px"><strong><a href="/<%= @bulb.category %>s/<%= @bulb.id %>/edit">EDIT</a> | <a href="">DELETE</a></strong></p>
+
+    <div class="row" style="margin: 30px 0px">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+          <p style="background-color: white; color: black; padding: 5px; text-align: center; margin: 20px 20px"><strong><a href="/<%= @bulb.category %>s/<%= @cat_id %>/edit">EDIT</a> | <a href="" style="">DELETE</a></strong></p>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+
+
   <% end %>
 
 

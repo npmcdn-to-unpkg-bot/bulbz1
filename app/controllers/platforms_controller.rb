@@ -89,12 +89,53 @@ class PlatformsController < ApplicationController
   # PATCH/PUT /platforms/1
   # PATCH/PUT /platforms/1.json
   def update
+
+    @platform.update(platform_params)
+    @platform.save
+
+    @bulb = Bulb.find_by(:id => @platform.bulb_id)
+    @bulb.title = params[:platform][:title]
+    @bulb.description = params[:platform][:description]
+    @bulb.target1 = params[:platform][:target1]
+    @bulb.target2 = params[:platform][:target2]
+    @bulb.category = "platform"
+    @bulb.ref_id = @platform.id
+    @bulb.user_id = current_user.id
+    @bulb.save
+
+
+    uri = URI.parse("https://api.monkeylearn.com/v2/extractors/ex_y7BPYzNG/extract/")
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    request = Net::HTTP::Post.new(uri.request_uri)
+    # Set POST data
+    request.body = {text_list: [@bulb.description]}.to_json
+    request.add_field("Content-Type", "application/json")
+    request.add_field("Authorization", "token c956c6be34d90185c5eab3c04a8f58416259aa67")
+    # parse the monkeylearn respons
+    response = JSON.parse http.request(request).body
+    response_array = response["result"].first
+
+    keywords = Array.new
+
+    response_array.each do |response|
+      keywords << response["keyword"]
+    end
+
+    keywords.each do |keyword|
+      k = Keyword.new
+      k.bulb_id = @bulb.id
+      k.content = keyword
+      k.save
+    end
+
+
     respond_to do |format|
-      if @platform.update(platform_params)
-        format.html { redirect_to @platform, notice: 'Platform was successfully updated.' }
-        format.json { render :show, status: :ok, location: @platform }
+      if @platform.save
+        format.html { redirect_to bulbs_url }
+        format.json { render :show, status: :created, location: @platform }
       else
-        format.html { render :edit }
+        format.html { render :new }
         format.json { render json: @platform.errors, status: :unprocessable_entity }
       end
     end
