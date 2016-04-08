@@ -18,7 +18,7 @@
   <h4 style="padding-left: 250px"><span class="bulb_type">+</span></h4>
   <h4><%= f.text_field(:target2, :class => "comment_input",:placeholder => "DEFINE AUDIENCE 2" ) %></h4>
   <h4><%= f.text_area(:description, :class => "text_area_small2", :placeholder => "Decribe it in your own words.") %></h4>
-  <%= f.submit("CREATE BULB", :class => "submit_button comment_button") %>
+  <%= f.submit("CREATE BULB", :class => "submit_button comment_button", data: {disable_with: "Starting Machine Learning..."}) %>
 
 
 <% end %>

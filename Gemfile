@@ -22,6 +22,8 @@ end
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# ADMIN BACKEND
+gem 'rails_admin', '~> 0.6.8'
 
 # Font Awesome
 gem "font-awesome-rails"

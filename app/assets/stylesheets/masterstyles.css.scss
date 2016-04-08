@@ -478,3 +478,11 @@ a:hover {
   padding: 5px;
   line-height: 30px;
 }
+
+
+
+.comment_button:disabled {
+    background: #999;
+    color: #555;
+    cursor: default;
+}
