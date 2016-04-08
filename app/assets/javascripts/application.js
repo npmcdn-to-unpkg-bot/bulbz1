@@ -25,6 +25,26 @@ $(function() {
     });
 
 
+  $('#menu_ein').click(function(e) {
+    e.preventDefault();
+    $('#menu_aus').show();
+    $("#sidebar-wrapper").animate( { width: "330px"}, 100,
+      function() {
+        $('#wrapper').css('padding-left', '330px');
+      });
+
+  });
+
+    $('#menu_aus').click(function(e) {
+    e.preventDefault();
+    $(this).hide();
+    $('#menu_aus').show();
+    $("#sidebar-wrapper").animate( { width: "0px"}, 100,
+      function() {
+        $('#wrapper').css('padding-left', '0px');
+      });
+
+  });
 
 
 

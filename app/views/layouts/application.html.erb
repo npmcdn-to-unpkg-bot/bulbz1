@@ -82,13 +82,17 @@
                   <a href="" style="color: #FB375D" data-toggle="modal" data-target="#myModal">New bulb</a>
                 </li>
 
-                <li style="padding-bottom: 50px; border-bottom: 1px solid grey">
+                <li>
                   <%= link_to("AI Cloud", keywords_url) %>
+                </li>
+
+                <li id="menu_aus" style="margin-top: 30px; display: none">
+                <a href=""><span style="color: white; background-color: black; padding: 20px;">HIDE MENU</span></a>
                 </li>
 
 
 
-                <li style="margin-top: 50px; padding-bottom: 50px; border-bottom: 1px solid grey">
+                <li style="margin-top: 50px; padding-bottom: 50px; border-bottom: 1px solid grey; padding-top: 50px; border-top: 1px solid grey">
                 <% if current_user %>
                   <div class="row">
                     <div class="col-sm-12">
@@ -191,6 +195,27 @@
 
 
                     <div class="" style="padding: 30px 30px 80px 30px;">
+
+
+<div class="mob_top_nav">
+<div class="row">
+  <div class="col-xs-4">
+    <a href="/bulbs" style="font-family: 'Mr Dafoe', cursive; font-size: 40px; letter-spacing: 1px; text-align: center; color: black; font-weight: bolder">
+        Bulbz <!-- <i class="fa fa-lightbulb-o"></i> -->
+    </a>
+  </div>
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4" style="padding-top: 15px; text-align: right;">
+    <a href="" id="menu_ein"><span style="color: white; background-color: black; padding: 20px;">MENU</span></a>
+
+  </div>
+</div>
+
+</div>
+
+
+
+
                         <%= yield %>
 <!--                         <a href="#menu-toggle" class="" id="menu-toggle">Toggle Menu</a> -->
                     </div>

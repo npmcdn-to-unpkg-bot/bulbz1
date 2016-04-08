@@ -486,3 +486,18 @@ a:hover {
     color: #555;
     cursor: default;
 }
+
+
+.mob_top_nav {
+  height: 90px;
+  background-color: white;
+  padding: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+@media screen and (min-width: 900px) {
+  .mob_top_nav {
+    display: none;
+  }
+}
